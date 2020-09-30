@@ -124,7 +124,10 @@
                 </h3>
 
                 <div class="blog-post">
-                    <h2 class="blog-post-title">Sample blog post</h2>
+                    <header class="blog-post-header">
+                        <h2 class="blog-post-title">First Sample blog post</h2>
+                    </header>
+
                     <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 
                     <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
@@ -154,29 +157,29 @@
                         <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
                     </ol>
                     <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-                </div><!-- /.blog-post core-->
-                <footer>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control comment-text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group">
-                            <button class="btn btn-outline-secondary send-comment" type="button" id="button-addon2">Send Comment</button>
+
+                    <footer>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control comment-text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary send-comment" type="button" id="button-addon2">Send Comment</button>
+                            </div>
+
                         </div>
 
-                    </div>
+
+                        <ul class="list-group list-group-flush comments-container">
+                            <!--add dinamically
+                            <li class="list-group-item">comment text</li>-->
 
 
-                    <ul class="list-group list-group-flush comments-container">
-                        <!--add dinamically
-                        <li class="list-group-item">comment text</li>-->
-
-
-                    </ul>
+                        </ul>
 
 
 
-                </footer>
-
-                <div class="blog-post">
+                    </footer>
+                </div><!-- /.blog-post core-->
+                <!--<div class="blog-post">
                     <h2 class="blog-post-title">Another blog post</h2>
                     <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
 
@@ -186,9 +189,9 @@
                     </blockquote>
                     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
                     <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                </div><!-- /.blog-post -->
-
-                <div class="blog-post">
+                </div>-->
+                <!-- /.blog-post -->
+                <!--<div class="blog-post">
                     <h2 class="blog-post-title">New feature</h2>
                     <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
 
@@ -200,7 +203,31 @@
                     </ul>
                     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
                     <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                </div><!-- /.blog-post -->
+                </div>-->
+                <!-- /.blog-post -->
+
+                <footer>
+                    <!--add post by modal-->
+                    <div class="input-group mb-3">
+
+                        <div class="input-group">
+                            <!--trigger for modal-->
+                            <button class="btn btn-outline-secondary spam-modal" type="button" id="button-modal" data-toggle="modal" data-target="#exampleModal">Launch modal for new post</button>
+                        </div>
+
+                    </div>
+
+
+                    <ul class="list-group list-group-flush blog-post-container">
+                        <!--add dinamically
+                        <li class="list-group-item">comment text</li>-->
+
+
+                    </ul>
+
+
+
+                </footer>
 
                 <nav class="blog-pagination">
                     <a class="btn btn-outline-primary" href="#">Older</a>
@@ -254,15 +281,40 @@
         </p>
     </footer>
 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a new post:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control modal-text-title" placeholder="Insert here the title" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="form-control modal-text-body" placeholder="Insert here the post body" aria-label="Recipient's username" aria-describedby="button-addon2">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary create-post">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
 
     <script>
-        jQuery(document).ready(function ()
-        {
+        jQuery(document).ready(function () {
             //Un sacco di istruzioni interessanti…
             $(".send-comment").click(function () {
                 var commentText = $(".comment-text").val();
@@ -277,6 +329,22 @@
         }
         );
     </script>
+    <script>
+        jQuery(document).ready(function () {
+            //Un sacco di istruzioni interessanti…
+            $(".send-comment").click(function () {
+                var commentText = $(".comment-text").val();
+                var commentContainer = $(".comments-container");
+                var commentRow = '<li class="list-group-item"><a href="#" class =badge badge-light>Mario</a>' + commentText + '</li>';
+
+                commentContainer.append(commentRow);
+
+
+            })
+
+        }
+        );
+    </script> <!--to create a class useful to append posts-->
 
 
 
